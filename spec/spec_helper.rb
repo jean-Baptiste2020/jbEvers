@@ -94,10 +94,11 @@ RSpec.configure do |config|
 #     end
 #   end
 # end
+RSpec.configure do |config|
   config.before(:each, type: :system) do
     driven_by(:selenium_chrome)
   end
-
+end
 
 config.before(:each) do |example|
   if example.metadata[:type] == :system
