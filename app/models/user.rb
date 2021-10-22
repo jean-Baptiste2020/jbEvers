@@ -5,4 +5,5 @@ class User < ApplicationRecord
     validates :password, presence: true, length: {minimum:6}
     has_many :tasks
     # before_create do self.is_admin = true
-end
+    end
+

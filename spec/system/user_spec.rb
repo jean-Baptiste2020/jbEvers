@@ -1,20 +1,20 @@
 require 'rails_helper'
 RSpec.describe 'User registration / login / logout function', type: :system do
-    before do
+  def user_login
     visit new_session_path
     fill_in 'session[email]', with: 'user1@gmail.com'
     fill_in 'session[password]', with: 'password'
     click_button 'signin'
   end
 
-  before do
+  def admin_user_login
     visit new_session_path
     fill_in 'session[email]', with: 'admin1@gmail.com'
     fill_in 'session[password]', with: 'password'
     click_button 'signin'
   end
 
- #*******************************
+#*******************************
   describe 'User registration test' do
     context 'No user data and no login' do
       it 'Test of new user registration' do
@@ -32,7 +32,7 @@ RSpec.describe 'User registration / login / logout function', type: :system do
       end
     end
   end
- #******************************
+#******************************
   describe 'Testing session functionality' do
     before do
       @user = FactoryBot.create(:user)
@@ -66,7 +66,7 @@ RSpec.describe 'User registration / login / logout function', type: :system do
       end
     end
   end
- #******************************
+# #******************************
   describe 'Manage screen test' do
     before do
       @user = FactoryBot.create(:user)

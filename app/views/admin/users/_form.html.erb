@@ -36,9 +36,11 @@
       <%= form.check_box :is_admin %>
     </div>
     <%end%>
+    
     <% if action_name == "edit" %>
     <div class="actions" style="float: right"><%= form.submit "Update" %></div>
     <% else %>
     <div class="actions" style="float: right"><%= form.submit "Signup" %></div>
     
     <% end %> <% end %>
+    
